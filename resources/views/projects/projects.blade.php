@@ -14,7 +14,14 @@
         <h1><a href="/projects/{{$project->id}}" style="text-decoration: none;color:aqua;filter:brightness(80%)">{{$project->project_name}}</a></h1>
             <div class='tag-container'>
             <div class='card-tags'>
-                <p style="margin: 5px">{{$project->project_tags}}</p>
+                @php
+                $tagss=$project->project_tags;
+                $tags=explode(",",$tagss);     
+                @endphp
+                
+                @foreach($tags as $tag)
+                <div style="margin: 5px;display:inline-block">{{$tag}}</div>
+                @endforeach 
             </div>
             </div>
         </div>   
